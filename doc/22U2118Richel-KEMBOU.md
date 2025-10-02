@@ -16,22 +16,22 @@
 
 ## Travail réalisé
 
-### Jour 1 [Date:26/09/2025]
+### Jour 1 [Date: 26/09/2025]
 - Lecture de la présentation théorique sur le calcul symbolique  
 - Installation de Sympy dans python 
 - Découverte des principales fonctions Sympy et  Manipulation simple de symboles (ex : factorisation, dérivation, evaluation en des points, affichage mathématiques)
 - Implementation dans le notebook **
 
-### Jour 3 [Date:1/10/2025]
+### Jour 2 [Date: 1/10/2025]
 - Création de la présentation en pdf.
 
-### Jour 2
+### Jour 3 [Date: 2/10/2025]
 - Création du Repository dans l'organisation **MKKT-4127-Optimisation-TPE**
 - Création de la branche "22U2118_KEMBOU".
-- 
 
 
----
+
+----
 
 ##  Compétences acquises
 - Utilisation de Python pour le calcul symbolique  
