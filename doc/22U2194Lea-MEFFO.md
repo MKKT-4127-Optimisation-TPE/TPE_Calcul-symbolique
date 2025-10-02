@@ -77,6 +77,8 @@ f = sp.Function('f')(x)
 ### Jour 3:Jeudi 03 Octobre 2025
 - Configuration de l'organisation Github
 - Création de branches  
+- etude de la convexite sur la fonction MSE 
+- application de la mse sur la regression lineaire
 
 ------------------------------------------------------------------------------------------------------------------------
 
@@ -92,3 +94,66 @@ f = sp.Function('f')(x)
 - Relier Sympy avec NumPy pour comparer calcul symbolique et numérique  
 
 ---------------------------------------------------------------------------------------------------------------------------
+
+
+## TPE1 ETUDE DES FONCTIONS D ERREURS 
+
+### Étude de la Convexité des Fonctions
+
+Introduction à la Convexité
+Pourquoi la convexité est-elle importante ?
+
+La convexité est une propriété fondamentale en optimisation et en apprentissage automatique car elle garantit que :
+
+    Les minimums locaux sont des minimums globaux
+
+    Les algorithmes d'optimisation convergent vers la solution optimale
+
+    L'analyse mathématique est simplifiée
+
+Définitions Mathématiques
+Définition formelle
+
+Une fonction f:Rn→Rf:Rn→R est convexe si pour tout x,y∈Rnx,y∈Rn et λ∈[0,1]λ∈[0,1]:
+f(λx+(1−λ)y)≤λf(x)+(1−λ)f(y)
+f(λx+(1−λ)y)≤λf(x)+(1−λ)f(y)
+Critères de convexité
+1. Pour les fonctions à une variable
+
+    Dérivée seconde : Si f′′(x)≥0 pour tout xx, alors ff est convexe
+
+2. Pour les fonctions à plusieurs variables
+
+    Matrice hessienne : Si la matrice hessienne HH est semi-définie positive, alors ff est convexe
+
+
+Définitions Mathématiques
+Définition formelle
+
+Une fonction f:Rn→Rf:Rn→R est convexe si pour tout x,y∈Rnx,y∈Rn et λ∈[0,1]λ∈[0,1]:
+    f(λx+(1−λ)y)≤λf(x)+(1−λ)f(y)
+    f(λx+(1−λ)y)≤λf(x)+(1−λ)f(y)
+Critères de convexité
+1. Pour les fonctions à une variable
+
+    Dérivée seconde : Si f′′(x)≥0f′′(x)≥0 pour tout xx, alors ff est convexe
+
+2. Pour les fonctions à plusieurs variables
+
+    Matrice hessienne : Si la matrice hessienne HH est semi-définie positive, alors ff est convexe
+
+
+3. Avantages de la convexité
+
+    Minimum global garanti
+
+        Tout minimum local est un minimum global
+
+        Pas de risque de converger vers un sous-optimum
+
+    Convergence assurée
+
+        Les algorithmes de descente de gradient convergent vers la solution
+
+        Taux de convergence prévisible
+    
