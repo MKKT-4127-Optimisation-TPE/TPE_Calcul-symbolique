@@ -70,11 +70,11 @@ f = sp.Function('f')(x)
 - Installation de sympy
 - Qu'est ce que c'est le calcul symbolique?
 
-### Jour 1:Mercredi 02 Octobre 2025
+### Jour 2:Mercredi 02 Octobre 2025
 - Manipulation simple de symboles (ex : factorisation, dérivation,gradient)  
 - Découverte des principales fonctions Sympy  
 
-### Jour 2:Jeudi 03 Octobre 2025
+### Jour 3:Jeudi 03 Octobre 2025
 - Configuration de l'organisation Github
 - Création de branches  
 
