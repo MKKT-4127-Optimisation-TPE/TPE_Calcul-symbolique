@@ -6,8 +6,7 @@
 
 ---
 
-## 1. Objectifs de la Période
-
+## jour 1: 2 Octobre 2025   (1er travail)
 L'objectif était d'établir la base théorique et pratique pour l'utilisation de SymPy dans le cadre des problèmes d'optimisation.
 
 * **Théorique :** Comprendre la philosophie du **calcul symbolique** et le différencier clairement du calcul numérique (exactitude vs. approximation).
@@ -41,3 +40,20 @@ L'objectif était d'établir la base théorique et pratique pour l'utilisation d
 
 * Explorer l'intégration de SymPy avec NumPy via **`sp.lambdify`** pour transposer les résultats symboliques vers des calculs haute performance.
 * Approfondir les fonctionnalités de **Calcul Matriciel symbolique** pour anticiper les besoins d'Optimisation de systèmes linéaires complexes.
+
+
+## 2e travail(La perte de Huber)
+
+* Modélisation : Définition symbolique de la Perte de Huber comme une fonction par morceaux à l'aide de sp.Piecewise.
+
+* Gradient : Utilisation de SymPy pour calculer l'expression exacte du gradient (∇Lδ​) de la fonction, distinguant la zone linéaire (∣erreur∣>δ) de la zone quadratique.
+
+* Convexité : Calcul de la dérivée seconde (∇2Lδ​) pour confirmer symboliquement que la Perte de Huber est convexe (la dérivée seconde est ≥0 partout).
+
+* Visualisation : Représentation de la courbe de Lδ​ sur les données de régression générées. Calcul symbolique et tracé de l'équation de la tangente à la courbe en un point donné (T(e)=Lδ​(e0​)+∇Lδ​(e0​)(e−e0​)).
+
+## Perspectives
+
+* Intégration Numérique : Développer l'utilisation de sp.lambdify pour convertir rapidement les expressions symboliques de gradient en fonctions numériques (NumPy) pour une implémentation future d'un algorithme de Descente de Gradient complet.
+
+* Calcul Matriciel : Approfondir les fonctionnalités de Calcul Matriciel symbolique de SymPy pour la gestion des Hessiennes et des Jacobiennes, nécessaire pour l'optimisation de fonctions à plusieurs variables.
