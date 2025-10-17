@@ -1,0 +1,46 @@
+# Environnements virtuels
+# Le dossier "venv" ou tout dossier d'environnement virtuel
+venv/
+.env/
+env/
+/bin/
+/lib/
+/include/
+
+# Fichiers de cache et dépendances Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Fichiers d'installation des dépendances
+*.egg-info/
+.tox/
+dist/
+build/
+
+# Fichier de cache spécifique à l'OS
+.DS_Store
+
+# ---------------------------------------------------------------------
+# Fichiers temporaires générés par LaTeX (Beamer)
+# ---------------------------------------------------------------------
+
+# Fichiers auxiliaires de compilation
+*.aux
+*.bbl
+*.blg
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.dvi
+*.pdf # Si vous ne voulez pas committer le PDF final
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.vrb
+
+*.brf
+*.bcf
