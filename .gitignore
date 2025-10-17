@@ -7,6 +7,8 @@ env/
 /lib/
 /include/
 
+**/.ipynb_checkpoints/
+
 # Fichiers de cache et dépendances Python
 __pycache__/
 *.pyc
