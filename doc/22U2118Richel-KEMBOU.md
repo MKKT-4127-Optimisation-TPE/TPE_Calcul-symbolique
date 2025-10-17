@@ -37,5 +37,35 @@
 - Utilisation de Python pour le calcul symbolique  
 - Maîtrise des fonctions principales de Sympy : `simplify`, `diff`, `integrate`, `solve`  
   
+---
+
+## C'EST QUOI L'ENTROPIE CROISEE CATEGORIELLE
+
+L'**entropie croisée catégorielle** est une **FONCTION DE LOSS**  pour la classification multi-classes.
+
+```python
+def entropie_croisee(y_true, y_pred):
+    return -np.sum(y_true * np.log(y_pred))
+
+```
+en langage Symbolique on le représente par le bout de code  suivante 
+```python
+i, N = sp.symbols('i N', integer=True, positive=True)
+y = sp.Function('y')(i)
+y_hat = sp.Function('y_hat')(i)
+
+ECC = - sp.summation(y * sp.log(y_hat), (i, 1, N))
+sp.pretty_print(ECC)
+```
+
+### Convexité
+ce qui la justifie c'est l'expression de sa dérivée seconde qui est toujours positive en tout point prédit marqué **y_hat** Dans notre cas. Pour avoir ce résultat, et le vérifier il faut suivre le code suivant
+
+```python
+grad_2_ecc = sp.diff(ECC, y_hat, 2) #Ici on met 2 pour marquer dérivée seconde.
+sp.pretty_print(grad_2_ecc) 
+```
+**Cela affecte directement la Hessienne d'une telle fonction de cout et dont toutes les valeurs propres seront toujours positives.**
+  
 
 ---
