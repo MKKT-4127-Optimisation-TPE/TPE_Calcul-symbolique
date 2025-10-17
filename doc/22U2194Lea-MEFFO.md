@@ -94,66 +94,72 @@ f = sp.Function('f')(x)
 - Relier Sympy avec NumPy pour comparer calcul symbolique et numérique  
 
 ---------------------------------------------------------------------------------------------------------------------------
+# ############################################################################################################################"
+-------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------
+##              TPE1 ETUDE DES FONCTIONS D ERREURS 
+-------------------------------------------------------
+
+Le devoirse concentre également sur l'analyse théorique de la fonction de coût utilisée, l'Erreur Quadratique Moyenne (EQM), en démontrant sa convexité à l'aide du calcul symbolique.
+
+## Étude de la Fonction de Perte (EQM)
+
+L'EQM (ou MSE) est la fonction de coût utilisée par la méthode des moindres carrés pour trouver les coefficients optimaux β.
+
+### Formule et Rôle
+
+La fonction est définie par :
+EQM=N1​i=1∑N​(y^​i​−yi​)2
+
+Le rôle de l'EQM est de quantifier l'erreur du modèle en pénalisant fortement les grandes différences entre les prédictions (y^​) et les valeurs réelles (y). L'entraînement des modèles cherche à minimiser cette valeur.
 
 
-## TPE1 ETUDE DES FONCTIONS D ERREURS 
+### Analyse de la Convexité (SymPy)
 
-### Étude de la Convexité des Fonctions
+La convexité est une propriété cruciale car elle garantit que la fonction de coût a un minimum global unique, ce qui signifie que tout algorithme d'optimisation (comme la Descente de Gradient) trouvera la meilleure solution possible sans rester bloqué dans des minima locaux.
 
-Introduction à la Convexité
-Pourquoi la convexité est-elle importante ?
+L'analyse symbolique de l'EQM par rapport à la prédiction (y^​) est réalisée en calculant la dérivée seconde (la Hessienne) :
+Dérivée	Formule	Analyse
+Première Dérivée (Gradient)	∂y^​∂EQM​=N2(y^​−y)​	Nécessaire pour la Descente de Gradient.
+Seconde Dérivée (Hessienne)	∂y^​2∂2EQM​=N2​	Puisque N>0, la Hessienne est toujours positive.
 
-La convexité est une propriété fondamentale en optimisation et en apprentissage automatique car elle garantit que :
+### Conclusion de Convexité :
 
-    Les minimums locaux sont des minimums globaux
+Puisque la dérivée seconde est toujours positive (≥0), la fonction de perte EQM est convexe. La surface de coût est un "bol" parfait, garantissant que l'entraînement du modèle trouvera le β optimal.
 
-    Les algorithmes d'optimisation convergent vers la solution optimale
+## Modélisation et Résultats
 
-    L'analyse mathématique est simplifiée
+### Préparation des Données
 
-Définitions Mathématiques
-Définition formelle
+Le script effectue un chargement robuste pour gérer les séparateurs (virgule ou espace) et renomme la colonne cible en y.
 
-Une fonction f:Rn→Rf:Rn→R est convexe si pour tout x,y∈Rnx,y∈Rn et λ∈[0,1]λ∈[0,1]:
-f(λx+(1−λ)y)≤λf(x)+(1−λ)f(y)
-f(λx+(1−λ)y)≤λf(x)+(1−λ)f(y)
-Critères de convexité
-1. Pour les fonctions à une variable
+   -  Variables Explicatives (X) : X1​, X2​
 
-    Dérivée seconde : Si f′′(x)≥0 pour tout xx, alors ff est convexe
+   -  Variable Cible (y) : y (renommée depuis Y_Cible)
 
-2. Pour les fonctions à plusieurs variables
+### Modèle Linéaire Multiple
 
-    Matrice hessienne : Si la matrice hessienne HH est semi-définie positive, alors ff est convexe
+Le modèle linéaire simple permet d'établir une ligne de base des performances.
 
+Équation	y=β1​X1​+β2​X2​+β0
+MSE (EQM)	mse_linear	Niveau de l'erreur minimale atteinte.
+## Visualisations Générées
 
-Définitions Mathématiques
-Définition formelle
+Le script produit plusieurs figures dans Matplotlib :
 
-Une fonction f:Rn→Rf:Rn→R est convexe si pour tout x,y∈Rnx,y∈Rn et λ∈[0,1]λ∈[0,1]:
-    f(λx+(1−λ)y)≤λf(x)+(1−λ)f(y)
-    f(λx+(1−λ)y)≤λf(x)+(1−λ)f(y)
-Critères de convexité
-1. Pour les fonctions à une variable
+    Analyse Exploratoire (VAD) : Affichage des relations X1​ vs y, X2​ vs y, et la distribution 3D de l'ensemble des données.
 
-    Dérivée seconde : Si f′′(x)≥0f′′(x)≥0 pour tout xx, alors ff est convexe
-
-2. Pour les fonctions à plusieurs variables
-
-    Matrice hessienne : Si la matrice hessienne HH est semi-définie positive, alors ff est convexe
+    Surface de Coût EQM : Représentation 3D de la fonction EQM en fonction des coefficients β1​ et β2​. Le point rouge au fond de ce "bol" convexe montre exactement la solution (β1,opt​,β2,opt​) trouvée par l'algorithme.
 
 
-3. Avantages de la convexité
+##  Compétences acquises
+- Utilisation de Python pour le calcul symbolique  
+- renforcement des competences sur le calcul des derivées à la main
+- Utilisation des fonctions principales de Sympy : `simplify`, `diff`, `integrate`, `solve`  
+- Capacité à appliquer le calcul symbolique dans un contexte concret (ex : Regression linéaire )  
 
-    Minimum global garanti
-
-        Tout minimum local est un minimum global
-
-        Pas de risque de converger vers un sous-optimum
-
-    Convergence assurée
-
-        Les algorithmes de descente de gradient convergent vers la solution
-
-        Taux de convergence prévisible
-    
+-------------------------------------------------------------------------------------------------------------------------
+##  Améliorations futures
+- Approfondir l’utilisation de Sympy dans l" etude d'autres fonctions de coût
+- Developpement des reflexes de calculs à la main avant de modéliser sur machine grace à la ibliothèque dans le but de mieux comprendre les opérations faites par ces dernieres en arriere plan
